@@ -72,3 +72,15 @@ function inspectDie($value)
     echo "</pre>";
     die();
 }
+
+/**
+ * Redirect
+ *
+ * @param string $url
+ * @return void
+ */
+function redirect($url)
+{
+    header("Location: $url");
+    exit;
+}
