@@ -10,7 +10,12 @@
     "autoload": {
         "psr-4": {
             "Framework\\": "Framework/",
-            "App\\": "App/"
+            "App\\": "App/",
+            "Symfony\\": "vendor/symfony/"
         }
+    },
+    "require": {
+        "symfony/mailer": "^6.4",
+        "vlucas/phpdotenv": "^5.6"
     }
 }

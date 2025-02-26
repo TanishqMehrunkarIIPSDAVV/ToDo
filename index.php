@@ -5,6 +5,10 @@ error_reporting(E_ALL);
 require_once "./src/vendor/autoload.php";
 require_once "./src/helpers.php";
 
+use Dotenv\Dotenv;
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 use Framework\Router;
 use Framework\Session;
 Session::start();
