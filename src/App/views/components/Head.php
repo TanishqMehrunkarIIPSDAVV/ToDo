@@ -18,25 +18,28 @@
     <link rel="stylesheet" href="/css/style.css">
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const themeToggle = document.getElementById('theme-toggle');
-            const html = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
 
-            if (localStorage.getItem('theme') === 'dark') {
-                html.classList.add('dark');
-            } else {
-                html.classList.remove('dark');
-            }
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    if (currentTheme === 'dark') {
+        html.classList.add('dark');
+        themeToggle.checked = true;
+    } else {
+        html.classList.remove('dark');
+        themeToggle.checked = false;
+    }
 
-            themeToggle.addEventListener('click', function() {
-                if (html.classList.contains('dark')) {
-                    html.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                } else {
-                    html.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                }
-            });
-        });
+    themeToggle.addEventListener('change', function() {
+        if (themeToggle.checked) {
+            html.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            html.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});
     </script>
 
 </head>
