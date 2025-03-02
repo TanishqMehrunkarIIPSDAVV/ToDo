@@ -1,4 +1,5 @@
 <?php
 
-$router->get("/","HomeController@index");
-// $router->get("/send-email","HomeController@sendEmail");
+$router->get("/","HomeController@signin",["guest"]);
+$router->get("/signup","HomeController@signup",["guest"]);
+$router->get("/forgot-password","HomeController@forgotPassword",["guest"]);
