@@ -79,7 +79,7 @@ function inspectDie($value)
  * @param string $url
  * @return void
  */
-function redirect($url)
+function redirect($url,$msg="")
 {
     header("Location: $url");
     exit;

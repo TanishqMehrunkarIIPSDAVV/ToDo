@@ -3,6 +3,8 @@ loadComponent("Head");
 ?>
 <div class="bg-[#D3D9D4] dark:bg-[#212A31] flex items-center justify-center h-screen">
     <div class="bg-white dark:bg-[#2E3944] p-8 rounded-2xl shadow-xl w-96 border border-[#BAB2B5] dark:border-[#124E66]">
+        <?= isset($msg) ? loadComponent("SuccessAlert",["msg"=>$msg ?? ""]) : ""?>
+        <?=loadComponent("ErrorAlert",["errors"=>$errors ?? []])?>
         <h2 class="text-2xl font-bold text-[#212A31] dark:text-[#D3D9D4] text-center poppins-bold">Sign In</h2>
         <form class="mt-6">
             <div>

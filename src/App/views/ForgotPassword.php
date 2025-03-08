@@ -4,7 +4,7 @@ loadComponent("Head");
 <div class="bg-[#D3D9D4] dark:bg-[#212A31] flex items-center justify-center h-screen">
     <div class="bg-white dark:bg-[#2E3944] p-8 rounded-2xl shadow-xl w-96 border border-[#BAB2B5] dark:border-[#124E66]">
         <h2 class="text-2xl font-bold text-[#212A31] dark:text-[#D3D9D4] text-center poppins-bold">Forgot Password</h2>
-        <form class="mt-6">
+        <form class="mt-6" action="/change-password" method="post">
             <div>
                 <label class="block text-[#212A31] dark:text-[#D3D9D4] font-medium poppins-regular">Email</label>
                 <input type="email" class="poppins-regular w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#124E66] dark:bg-[#D3D9D4] dark:text-black dark:border-[#D3D9D4]" placeholder="Enter your email">
