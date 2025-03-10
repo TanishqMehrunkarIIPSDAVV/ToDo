@@ -11,13 +11,15 @@ loadComponent("Head");
                 <label class="block text-[#212A31] dark:text-[#D3D9D4] font-medium poppins-regular">Email</label>
                 <input type="email" class="poppins-regular w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#124E66] dark:bg-[#D3D9D4] dark:text-black dark:border-[#D3D9D4]" placeholder="Enter your email">
             </div>
-            <div class="mt-4">
+            <div class="mt-4 relative">
                 <label class="block text-[#212A31] dark:text-[#D3D9D4] font-medium poppins-regular">Password</label>
                 <input type="password" class="poppins-regular w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#124E66] dark:bg-[#D3D9D4] dark:text-black dark:border-[#D3D9D4]" placeholder="Enter your password">
+                <?=loadComponent("EyeIcons") ?>
             </div>
-            <div class="mt-4">
+            <div class="mt-4 relative">
                 <label class="block text-[#212A31] dark:text-[#D3D9D4] font-medium poppins-regular">Confirm Password</label>
                 <input type="password" class="poppins-regular w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#124E66] dark:bg-[#D3D9D4] dark:text-black dark:border-[#D3D9D4]" placeholder="Confirm your password">
+                <?=loadComponent("EyeIconsConfirm") ?>
             </div>
             <div class="mt-4">
                 <label class="block text-[#212A31] dark:text-[#D3D9D4] font-medium poppins-regular">Code</label>
