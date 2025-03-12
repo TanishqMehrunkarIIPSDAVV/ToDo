@@ -54,6 +54,13 @@
             this.classList.toggle('z-50');
         });
     });
+
+    document.querySelector("#signup-form").addEventListener('submit',()=>{
+        const button = document.querySelector("button[type='submit']");
+        button.disabled = true;
+        button.innerHTML = "Creating...";
+        button.style.cursor = "not-allowed";
+    });
 </script>
 
 </html>

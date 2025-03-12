@@ -4,7 +4,7 @@ loadComponent("Head");
 <div class="bg-[#D3D9D4] dark:bg-[#212A31] flex items-center justify-center h-screen">
     <div class="bg-white dark:bg-[#2E3944] p-8 rounded-2xl shadow-xl w-96 border border-[#BAB2B5] dark:border-[#124E66]">
         <?=loadComponent("ErrorAlert",["errors"=>$errors ?? []])?>
-        <?=loadComponent("WarningAlert",["msg"=>$msg ?? 'Please Verify by using your Email Address. A Code has been sent to you!!!'])?>
+        <?=loadComponent("WarningAlert",["msg"=>'Please Verify by using your Email Address. A Code has been sent to you!!!'])?>
         <h2 class="text-2xl font-bold text-[#212A31] dark:text-[#D3D9D4] text-center poppins-bold">Verification</h2>
         <form class="mt-6" action="/verification" method="post">
             <div>

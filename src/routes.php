@@ -7,6 +7,7 @@ $router->get("/verify","UserController@verify",["guest"]);
 //Reset Password Page
 $router->get("/reset-password","UserController@resetPassword",["guest"]);
 $router->get("/home","HomeController@index",["auth"]);
+$router->get("/logout","UserController@logout",["auth"]);
 
 //Post
 $router->post("/create","UserController@create",["guest"]);

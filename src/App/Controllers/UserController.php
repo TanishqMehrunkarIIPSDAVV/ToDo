@@ -168,7 +168,7 @@ class UserController
             </html>
             ';
             EmailController::sendEmail($email, $subject, $text, $html);
-            load("Verify", ["msg" => "To Register Successfully, Please Verify Your Email Address. An Email has been sent to you!!!"]);
+            redirect("/verify");
         }
     }
 
@@ -195,8 +195,8 @@ class UserController
         if (!empty($errors)) {
             load("Signin", [
                 "errors" => $errors,
-                "user"=>[
-                    "email"=>$email
+                "user" => [
+                    "email" => $email
                 ]
             ]);
             exit;
@@ -211,14 +211,14 @@ class UserController
                         "id" => $user->id,
                         "email" => $user->email,
                         "username" => $user->username
-                    ]);                    
+                    ]);
                     redirect("/home");
                 } else {
                     $errors["password"] = "Invalid Password!!!";
                     load("Signin", [
                         "errors" => $errors,
-                        "user"=>[
-                            "email"=>$email
+                        "user" => [
+                            "email" => $email
                         ]
                     ]);
                 }
@@ -229,6 +229,18 @@ class UserController
                 ]);
             }
         }
+    }
+
+    /**
+     * Logout the User
+     * @return void
+     */
+    public function logout()
+    {
+        Session::destroy();
+        $params = session_get_cookie_params();
+        setcookie("PHPSESSID", "", time() - 86400, $params["path"], $params["domain"]);
+        redirect("/");
     }
 
     /**
@@ -430,7 +442,7 @@ class UserController
                 </body>
                 </html>';
                 EmailController::sendEmail($email, $subject, $text, $html);
-                load("ResetPassword", ["msg" => "To Reset Your Password, Please Check Your Email Address. An Email has been sent to you!!!"]);
+                redirect("/reset-password");
             } else {
                 $errors["email"] = "Email is not Registered!!!";
                 load("ForgotPassword", [

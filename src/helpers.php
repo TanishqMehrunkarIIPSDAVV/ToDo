@@ -79,8 +79,9 @@ function inspectDie($value)
  * @param string $url
  * @return void
  */
-function redirect($url,$msg="")
+function redirect($url,$data=[])
 {
+    extract($data);
     header("Location: $url");
     exit;
 }
